@@ -1,3 +1,3 @@
 for arg in $@; do
-	mkdir $arg
+	mkdir "ex$arg"
 done
