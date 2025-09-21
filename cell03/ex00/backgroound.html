@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="backgroound.css">
+    </head>
+    <body>
+        <button id="btn" onclick="clickFunc()">
+            Click me!
+        </button>
+        <script>
+            const button = document.getElementById("btn");
+            let btnStep = 0;
+            function clickFunc()
+            {
+                const r = Math.random() * 255;
+                const g = Math.random() * 255;
+                const b = Math.random() * 255;
+                document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+                if (btnStep < 3)
+                {
+                    button.style.width = button.offsetWidth + 25 + "px";
+                    button.style.height = button.offsetHeight + 25 + "px";
+
+                    button.style.fontSize = parseInt(window.getComputedStyle(button).getPropertyValue("font-size")) + 5 + "px";
+                    
+                    btnStep += 1;
+                }
+            }
+        </script>
+    </body>
+</html>
