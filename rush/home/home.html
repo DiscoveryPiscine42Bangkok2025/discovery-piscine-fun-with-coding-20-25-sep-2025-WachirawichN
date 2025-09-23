@@ -7,15 +7,29 @@
         <link rel="stylesheet" href="home.css">
     </head>
     <body>
-        <div id="jaiBox" class="container" style="left: 7.5%;">
+        <div id="jaiBox" class="portContainer">
             <img id="jaiImg" src="../resource/sigmundfloyd.jpg">
-            <div class="colorOverlay" style="background-image: linear-gradient(to top, rgba(255, 0, 0, 0.658), rgba(0, 0, 0, 0));"></div>
-            <p class="nameTitle">Wachirawich Namgird</p>
+            <button>Read Portfolio</button>
+            <h2 class="decorateText">Portfolio</h2>
+            <h1 class="nameText">Wachirawich Namgird</h1>
+            <p class="otherText">To be a GPU maniac.</p>
         </div>
-        <div id="champBox" class="container" style="left: 57.5%;">
+
+        <div id="champBox" class="portContainer" style="opacity: 0%;">
             <img id="champImg" src="../resource/sigmundfloyd.jpg">
-            <div class="colorOverlay" style="background-image: linear-gradient(to top, rgba(0, 0, 255, 0.654), rgba(0, 0, 0, 0));"></div>
-            <p class="nameTitle">Nigga Champ</p>
+            <button>Read Portfolio</button>
+            <h2 class="decorateText">Portfolio</h2>
+            <h1 class="nameText">Nigga Champ</h1>
+            <p class="otherText">Nigga.</p>
+        </div>
+        
+        <div id="loadBox" class="loadContainer">
+            <div id="jaiLoadBox" class="emptyBar">
+                <div class="runBar"></div>
+            </div>
+            <div id="champLoadBox" class="emptyBar">
+                <div class="runBar"></div>
+            </div>
         </div>
         <script src="home.js"></script>
     </body>
