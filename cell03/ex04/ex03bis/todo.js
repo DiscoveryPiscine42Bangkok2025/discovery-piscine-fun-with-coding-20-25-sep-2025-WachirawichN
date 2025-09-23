@@ -3,16 +3,20 @@ let todoArray = [];
 function readCookie()
 {
     let name = "todo=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
+    let ca = document.cookie.split(';');
+
+    for(let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
             const stringData = c.substring(name.length, c.length);
-            const arrayData = stringData.replace("[", "").replace("]", "").replaceAll('"', '').split(',');
+            const arrayData = stringData
+                .replace("[", "")
+                .replace("]", "")
+                .replaceAll('"', '')
+                .split(',');
             return arrayData;
         }
     }
@@ -23,7 +27,7 @@ function saveCookie()
     let tempArr = [];
     for (let i = 0; i < todoArray.length; i++)
     {
-        tempArr.push(todoArray[i].textContent);
+        tempArr.push(todoArray[i]);
     }
 
     const todoJson = JSON.stringify(tempArr);
@@ -32,26 +36,31 @@ function saveCookie()
 let rawCookieArray = readCookie();
 
 function arrageTodo() {
+    let containerHeight = +($("#ft_list").css("height").replace("px", ""));
+    console.log(todoArray);
+
     for (let i = 0; i < todoArray.length; i++) {
-        todoArray[i].style.top = i * 10 + "%";
+        let targetTop = (i / 10 * containerHeight) + "px";
+        $("div").filter(function() {
+            return $(this).text() == todoArray[i];
+        }).css({
+            "top" : targetTop
+        });
     }
 }
 function generateDiv(text) {
-    const newDiv = document.createElement("div");
-    newDiv.textContent = text;
-
-    newDiv.addEventListener("click", function() {
-        const idx = parseInt(newDiv.offsetTop / $("#ft_list").offsetHeight * 10);
+    $("<div>" + text + "</div>").appendTo("#ft_list").on("click", function(event) {
+        console.log("Nigga");
+        const idx = +($(this).css("top").replace("px", "")) / +($("#ft_list").css("height").replace("px", "")) * 10;
         if (idx == 0) todoArray.splice(0, 1);
         else todoArray.splice(idx, idx);
-        newDiv.remove();
+        $(this).remove();
         arrageTodo();
 
         saveCookie();
     });
 
-    $("#ft_list").appendChild(newDiv);
-    todoArray.unshift(newDiv);
+    todoArray.unshift(text);
     arrageTodo();
 }
 function generateCookieDiv() {
