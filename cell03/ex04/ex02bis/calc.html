@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .container {
+                background-color: rgb(230, 230, 230);
+                position: absolute;
+                height: 40%;
+                width: 25%;
+                border: 2px rgb(197, 197, 197);
+                border-radius: 10px;
+                border-style: solid;
+            }
+            .container input {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                height: 15%;
+                width: 90%;
+                font-size: xx-large;
+            }
+            .container .input1 {
+                top: 5%;
+            }
+            .container .input2 {
+                top: 20%;
+            }
+            .container .selectField {
+                position: absolute;
+                top: 55%;
+                left: 5%;
+                width: 20%;
+                height: 15%;
+                font-size: xx-large;
+            }
+            .container .submitBtn {
+                top: 55%;
+                left: 25%;
+                width: 70%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <input class="input1" id="input1" type="number">
+            <input class="input2" id="input2" type="number">
+            <select class="selectField" id="selectField">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input class="submitBtn" id="submitBtn" type="submit" value="Try me!">
+        </div>
+        <script>
+            const input1Field = document.getElementById("input1");
+            const input2Field = document.getElementById("input2");
+            const selectFiled = document.getElementById("selectField");
+            const submitButton = document.getElementById("submitBtn");
+
+            submitButton.addEventListener("click", function() {
+                const val1 = parseFloat(input1Field.value);
+                const val2 = parseFloat(input2Field.value);
+            
+                if (input1Field.value == "" || input2Field.value == "" || val1 < 0 || val2 < 0)
+                {
+                    alert("Error :(");
+                    return;
+                }
+                
+                let result = 0;
+                if (selectFiled.value == "+") result = val1 + val2;
+                else if (selectFiled.value == "-") result = val1 - val2;
+                else if (selectFiled.value == "*") result = val1 * val2;
+                else if ((selectFiled.value == "/" || selectFiled.value == "%") && val2 == 0) result = "It's over 9000!"
+                else if (selectFiled.value == "/") result = val1 / val2;
+                else if (selectFiled.value == "%") result = val1 % val2;
+                alert(result);
+                console.log(result);
+            });
+            const intervalId = setInterval(() => {
+                alert("Please, use me...")
+            }, 30000);
+        </script>
+    </body>
+</html>
