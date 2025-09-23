@@ -60,8 +60,8 @@
         <script>
             $(document).ready(function() {
                 $("#submitBtn").click(function() {
-                    const val1 = parseFloat($("#input1").val())
-                    const val2 = parseFloat($("#input2").val())
+                    const val1 = +($("#input1").val())
+                    const val2 = +($("#input2").val())
 
                     if ($("#input1").val() == "" || $("#input2").val() == "" || val1 < 0 || val2 < 0)
                     {

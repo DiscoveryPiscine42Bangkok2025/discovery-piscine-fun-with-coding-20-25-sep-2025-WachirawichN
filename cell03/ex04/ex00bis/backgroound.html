@@ -23,10 +23,13 @@
 
                     if (btnStep < 3)
                     {
+                        let width = +($("#btn").css("width").replace("px", ""));
+                        let height = +($("#btn").css("height").replace("px", ""));
+                        let fontSize = +($("#btn").css("font-size").replace("px", ""));
                         $("#btn").css({
-                            "width" : parseInt($("#btn").css("width")) + 25 + "px",
-                            "height" : parseInt($("#btn").css("height")) + 25 + "px",
-                            "fontSize" : parseInt($("#btn").css("font-size")) + 5 + "px"
+                            "width" : width + 25 + "px",
+                            "height" : height + 25 + "px",
+                            "fontSize" : fontSize + 5 + "px"
                         })
                         btnStep += 1;
                     }

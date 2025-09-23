@@ -1,4 +1,3 @@
-const container = document.getElementById("ft_list");
 let todoArray = [];
 
 function readCookie()
@@ -42,7 +41,7 @@ function generateDiv(text) {
     newDiv.textContent = text;
 
     newDiv.addEventListener("click", function() {
-        const idx = parseInt(newDiv.offsetTop / container.offsetHeight * 10);
+        const idx = parseInt(newDiv.offsetTop / $("#ft_list").offsetHeight * 10);
         if (idx == 0) todoArray.splice(0, 1);
         else todoArray.splice(idx, idx);
         newDiv.remove();
@@ -51,7 +50,7 @@ function generateDiv(text) {
         saveCookie();
     });
 
-    container.appendChild(newDiv);
+    $("#ft_list").appendChild(newDiv);
     todoArray.unshift(newDiv);
     arrageTodo();
 }

@@ -20,8 +20,7 @@
             }
 
             $("#balloon").click(function() {
-                let width = parseInt($("#balloon").css("width"));
-
+                let width = +($("#balloon").css("width").replace("px", ""));
                 if (width >= 420) {
                     width = 200;
                 }
@@ -39,10 +38,10 @@
                 });
             });
             $("#balloon").hover(function(){}, function() {
-                let width = parseInt($("#balloon").css("width"));
+                let width = +($("#balloon").css("width").replace("px", ""));
                 if (width > 200)
                 {
-                    width -= 2;
+                    width -= 5;
                 }
 
                 cycleCount--;
