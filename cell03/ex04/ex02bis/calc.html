@@ -42,6 +42,7 @@
                 width: 70%;
             }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -57,33 +58,30 @@
             <input class="submitBtn" id="submitBtn" type="submit" value="Try me!">
         </div>
         <script>
-            const input1Field = document.getElementById("input1");
-            const input2Field = document.getElementById("input2");
-            const selectFiled = document.getElementById("selectField");
-            const submitButton = document.getElementById("submitBtn");
+            $(document).ready(function() {
+                $("#submitBtn").click(function() {
+                    const val1 = parseFloat($("#input1").val())
+                    const val2 = parseFloat($("#input2").val())
 
-            submitButton.addEventListener("click", function() {
-                const val1 = parseFloat(input1Field.value);
-                const val2 = parseFloat(input2Field.value);
-            
-                if (input1Field.value == "" || input2Field.value == "" || val1 < 0 || val2 < 0)
-                {
-                    alert("Error :(");
-                    return;
-                }
-                
-                let result = 0;
-                if (selectFiled.value == "+") result = val1 + val2;
-                else if (selectFiled.value == "-") result = val1 - val2;
-                else if (selectFiled.value == "*") result = val1 * val2;
-                else if ((selectFiled.value == "/" || selectFiled.value == "%") && val2 == 0) result = "It's over 9000!"
-                else if (selectFiled.value == "/") result = val1 / val2;
-                else if (selectFiled.value == "%") result = val1 % val2;
-                alert(result);
-                console.log(result);
+                    if ($("#input1").val() == "" || $("#input2").val() == "" || val1 < 0 || val2 < 0)
+                    {
+                        alert("Error :(");
+                        return;
+                    }
+
+                    let result = 0;
+                    if ($("#selectField").val() == "+") result = val1 + val2;
+                    else if ($("#selectField").val() == "-") result = val1 - val2;
+                    else if ($("#selectField").val() == "*") result = val1 * val2;
+                    else if (($("#selectField").val() == "/" || $("#selectField").val() == "%") && val2 == 0) result = "It's over 9000!"
+                    else if ($("#selectField").val() == "/") result = val1 / val2;
+                    else if ($("#selectField").val() == "%") result = val1 % val2;
+                    alert(result);
+                    console.log(result);
+                });
             });
             const intervalId = setInterval(() => {
-                alert("Please, use me...")
+                alert("Please, use me...");
             }, 30000);
         </script>
     </body>
