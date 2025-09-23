@@ -5,30 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="backgroound.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
-        <button id="btn" onclick="clickFunc()">
+        <button id="btn">
             Click me!
         </button>
         <script>
-            const button = document.getElementById("btn");
             let btnStep = 0;
-            function clickFunc()
-            {
-                const r = Math.random() * 255;
-                const g = Math.random() * 255;
-                const b = Math.random() * 255;
-                document.body.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-                if (btnStep < 3)
-                {
-                    button.style.width = button.offsetWidth + 25 + "px";
-                    button.style.height = button.offsetHeight + 25 + "px";
+            $(document).ready(function() {
+                $("#btn").click(function() {
+                    const r = Math.random() * 255;
+                    const g = Math.random() * 255;
+                    const b = Math.random() * 255;
 
-                    button.style.fontSize = parseInt(window.getComputedStyle(button).getPropertyValue("font-size")) + 5 + "px";
-                    
-                    btnStep += 1;
-                }
-            }
+                    $(document.body).css("background-color", "rgb(" + r + "," + g + "," + b + ")");
+
+                    if (btnStep < 3)
+                    {
+                        $("#btn").css({
+                            "width" : parseInt($("#btn").css("width")) + 25 + "px",
+                            "height" : parseInt($("#btn").css("height")) + 25 + "px",
+                            "fontSize" : parseInt($("#btn").css("font-size")) + 5 + "px"
+                        })
+                        btnStep += 1;
+                    }
+                });
+            });
         </script>
     </body>
 </html>
