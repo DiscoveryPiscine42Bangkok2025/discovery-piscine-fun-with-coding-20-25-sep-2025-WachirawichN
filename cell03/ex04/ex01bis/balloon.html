@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
-        <div id="balloon" style="background-color: red; height: 200px; width: 200px; border-radius: 50%;" onclick="clickFunc()"></div>
+        <div id="balloon" style="background-color: red; height: 200px; width: 200px; border-radius: 50%;"></div>
         <script>
             const balloon = document.getElementById("balloon");
             const colorArr = ["red", "green", "blue"];
@@ -18,38 +19,41 @@
                 else if (cycleCount == -1) cycleCount = 2;
             }
 
-            function clickFunc()
-            {
-                if (balloon.offsetWidth >= 420)
-                {
-                    balloon.style.width = "200px";
-                    balloon.style.height = "200px";
+            $("#balloon").click(function() {
+                let width = parseInt($("#balloon").css("width"));
+
+                if (width >= 420) {
+                    width = 200;
                 }
                 else
                 {
-                    balloon.style.width = balloon.offsetWidth + 10 + "px";
-                    balloon.style.height = balloon.offsetHeight + 10 + "px";
+                    width += 10;
                 }
 
                 cycleCount++;
-                resolveCycleCount();
-                balloon.style.backgroundColor = colorArr[cycleCount];
-            }
-            function leaveFunc()
-            {
-                if (balloon.offsetWidth > 200)
+                resolveCycleCount(cycleCount);
+                $("#balloon").css({
+                    "width" : width + "px",
+                    "height" : width + "px",
+                    "background-color" : colorArr[cycleCount]
+                });
+            });
+            $("#balloon").hover(function(){}, function() {
+                let width = parseInt($("#balloon").css("width"));
+                if (width > 200)
                 {
-                    balloon.style.width = balloon.offsetWidth - 5 + "px";
-                    balloon.style.height = balloon.offsetHeight - 5 + "px";
+                    width -= 2;
                 }
 
                 cycleCount--;
-                resolveCycleCount();
-                balloon.style.backgroundColor = colorArr[cycleCount];
-                console.log("leave");
-            }
+                resolveCycleCount(cycleCount);
+                $("#balloon").css({
+                    "width" : width + "px",
+                    "height" : width + "px",
+                    "background-color" : colorArr[cycleCount]
+                });
+            });
 
-            balloon.addEventListener("mouseleave", (event) => leaveFunc());
         </script>
     </body>
 </html>
