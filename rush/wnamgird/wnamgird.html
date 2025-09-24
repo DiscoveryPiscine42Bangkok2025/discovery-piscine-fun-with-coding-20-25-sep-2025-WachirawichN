@@ -4,10 +4,58 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div>
-            
+        <ul id="navBarBox" class="navBar">
+            <h1>Portfolio</h1>
+            <a id="profileLink" href="#profileBoxTarget">Profile</a>
+            <a id="experienceLink" href="#experienceBoxTarget">Experience</a>
+            <a id="contactLink" href="#contactBox">Contact</a>
+        </ul>
+        <div id="profileBox" class="profileContainer">
+            <div id="profileBoxTarget" class="linkTarget"></div>
+            <img src="resource/profile.jpg">
+
+            <h2 class="decorateText">Portfolio</h2>
+            <h1 class="nameText">Wachirawich Namgird</h1>
+            <p class="otherText">To be a GPU maniac.</p>
         </div>
+        <div id="experienceBox" class="experienceContainer">
+            <div id="experienceBoxTarget" class="linkTarget"></div>
+            <div id="projectSelection" class="projectSelectionBar">
+                <div id="pro1SelBox" class="projectSelectBox">Project 1</div>
+                <div id="pro2SelBox" class="projectSelectBox">Project 2</div>
+                <div id="pro3SelBox" class="projectSelectBox">Project 3</div>
+                <div id="pro4SelBox" class="projectSelectBox">Project 4</div>
+                <div id="decorateBar" class="decorateBar"></div>
+            </div>
+            <div id="project1" class="projectContentBox">
+                <h2 class="decorateText">Project 1</h2>
+                <h1 class="nameText">Some project</h1>
+                <p class="otherText">Description</p>
+            </div>
+            <div id="project2" class="projectContentBox" style="display: none;">
+                <h2 class="decorateText">Project 2</h2>
+                <h1 class="nameText">Some project</h1>
+                <p class="otherText">Description</p>
+            </div>
+            <div id="project3" class="projectContentBox" style="display: none;">
+                <h2 class="decorateText">Project 3</h2>
+                <h1 class="nameText">Some project</h1>
+                <p class="otherText">Description</p>
+            </div>
+            <div id="project4" class="projectContentBox" style="display: none;">
+                <h2 class="decorateText">Project 4</h2>
+                <h1 class="nameText">Some project</h1>
+                <p class="otherText">Description</p>
+            </div>
+        </div>
+        <div id="contactBox" class="contactContainer">
+            <div id="contactBoxTarget" class="linkTarget"></div>
+            <p>GitHub: Somthing | Discord: Somthing | Instagram: Somthing </p>
+        </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
