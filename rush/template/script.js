@@ -1,5 +1,13 @@
 const navBar = document.getElementById("navBarBox");
+const projectContainer = document.getElementById("experienceBox");
+const projectArr = [
+    projectContainer.querySelector("#project1"),
+    projectContainer.querySelector("#project2"),
+    projectContainer.querySelector("#project3"),
+    projectContainer.querySelector("#project4")
+];
 
+// Nav Bar Event
 function navBarVisibility(state) {
     if (state == 1) {
         navBar.querySelector("#profileLink").style.display = "block";
@@ -18,7 +26,6 @@ function navBarButtonMouseLeave(event) {
     event.target.style.color = "rgb(152, 152, 152)";
 }
 
-// Nav Bar Event
 navBar.querySelector("h1").addEventListener("click", function() {
     window.location.href = "../home/home.html"
 });
@@ -28,6 +35,20 @@ navBar.querySelector("#experienceLink").addEventListener("mouseenter", navBarBut
 navBar.querySelector("#experienceLink").addEventListener("mouseleave", navBarButtonMouseLeave);
 navBar.querySelector("#contactLink").addEventListener("mouseenter", navBarButtonMouseEnter);
 navBar.querySelector("#contactLink").addEventListener("mouseleave", navBarButtonMouseLeave);
+
+// Experience Box Event
+function changeProject(event) {
+    for (let i = 0; i < projectArr.length; i++) {
+        projectArr[i].style.display = "none";
+    }
+
+    const idx = Math.round((parseInt(event.target.getBoundingClientRect().left) - 112.5) / 100);
+    projectArr[idx].style.display = "block";
+}
+projectContainer.querySelector("#projectSelection").querySelector("#pro1SelBox").addEventListener("click", changeProject)
+projectContainer.querySelector("#projectSelection").querySelector("#pro2SelBox").addEventListener("click", changeProject)
+projectContainer.querySelector("#projectSelection").querySelector("#pro3SelBox").addEventListener("click", changeProject)
+projectContainer.querySelector("#projectSelection").querySelector("#pro4SelBox").addEventListener("click", changeProject)
 
 // Window Resize Event
 window.addEventListener("resize", (event) => {
