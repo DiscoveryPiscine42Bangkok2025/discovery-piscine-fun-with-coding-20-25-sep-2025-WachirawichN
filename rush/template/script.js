@@ -1,6 +1,7 @@
 const navBar = document.getElementById("navBarBox");
 const dropDown = document.getElementById("dropDownBox");
 const projectContainer = document.getElementById("experienceBox");
+const img = document.getElementById("profileBox").querySelector("img");
 const projectArr = [
     projectContainer.querySelector("#project1"),
     projectContainer.querySelector("#project2"),
@@ -73,23 +74,45 @@ projectContainer.querySelector("#projectSelection").querySelector("#pro3SelBox")
 projectContainer.querySelector("#projectSelection").querySelector("#pro4SelBox").addEventListener("click", changeProject)
 
 // Window Event
-function adjustTextSize(baseSize) {
-    const winWidth = document.documentElement.clientWidth;
-    if (winWidth >= 1500) {
-        return baseSize - 2;
+function updateImgWidth() {
+    let width = "670px";
+    if (document.documentElement.clientWidth <= 820) {
+        document.getElementById("profileBox").querySelector("h2").style.top = "10%";
+        document.getElementById("profileBox").querySelector("h1").style.top = "20%";
+        document.getElementById("profileBox").querySelector("p").style.top = "30%";
+        width = "400px";
+        img.style.width = width;
+        img.style.height = width;
+
+        img.style.top = "275px"
+        img.style.left = "112.5px"
     }
-    else if (winWidth >= 1100) {
-        return baseSize - 4;
+    else if (document.documentElement.clientWidth <= 970) {
+        document.getElementById("profileBox").querySelector("h2").style.top = "20%";
+        document.getElementById("profileBox").querySelector("h1").style.top = "27.5%";
+        document.getElementById("profileBox").querySelector("p").style.top = "40%";
+        width = "400px";
+        img.style.width = width;
+        img.style.height = width;
+        img.style.top = (670 - parseInt(width))/ 2 + "px";
+        img.style.left = ""
+        img.style.right = "0%"
     }
-    else if (winWidth >= 900) {
-        return baseSize - 4;
-    }
-    else if (winWidth >= 600) {
-        return baseSize -8;
+    else if (document.documentElement.clientWidth <= 1280) {
+        document.getElementById("profileBox").querySelector("h2").style.top = "20%";
+        document.getElementById("profileBox").querySelector("h1").style.top = "27.5%";
+        document.getElementById("profileBox").querySelector("p").style.top = "40%";
+        width = "500px";
+        img.style.width = width;
+        img.style.height = width;
+        img.style.top = (670 - parseInt(width))/ 2 + "px";
+        img.style.left = ""
+        img.style.right = "0%"
     }
 }
 window.addEventListener("resize", (event) => {
     navBarVisibility(document.documentElement.clientWidth >= 760)
+    updateImgWidth();
 });
 window.addEventListener("scroll", (event) => {
     dropDown.style.top = "-75px";
@@ -97,3 +120,4 @@ window.addEventListener("scroll", (event) => {
 
 // Initialization
 navBarVisibility(document.documentElement.clientWidth >= 760);
+updateImgWidth();

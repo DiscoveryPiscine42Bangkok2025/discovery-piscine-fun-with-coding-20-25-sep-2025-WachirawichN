@@ -107,7 +107,7 @@ html, body {
     width: 670px;
     height: 670px;
     right: 0%;
-    top: 0%;
+    bottom: 0%;
     background-color: white;
 }
 .profileContainer h1, h2, p {
