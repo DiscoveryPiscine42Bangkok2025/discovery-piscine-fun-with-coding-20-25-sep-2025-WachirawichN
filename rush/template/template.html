@@ -4,24 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="template.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <ul class="navBar">
             <h1>Portfolio</h1>
-            <a id="profileLink" href="#profileBox">Profile</a>
-            <a id="experienceLink" href="#experienceBox">Experience</a>
+            <a id="profileLink" href="#profileBoxTarget">Profile</a>
+            <a id="experienceLink" href="#experienceBoxTarget">Experience</a>
             <a id="contactLink" href="#contactBox">Contact</a>
         </ul>
-        <div id="profileBox" class="profile">
-
+        <div id="profileBox" class="profileContainer">
+            <div id="profileBoxTarget" class="linkTarget"></div>
+            <img src="resource/profile.jpg">
+            
+            <h2 class="decorateText">Portfolio</h2>
+            <h1 class="nameText">Wachirawich Namgird</h1>
+            <p class="otherText">To be a GPU maniac.</p>
         </div>
-        <div id="experienceBox" class="experience">
+        <div id="experienceBox" class="experienceContainer">
+            <div id="experienceBoxTarget" class="linkTarget"></div>
+            <div id="projectSelection" class="projectSelectionBar">
+                
+            </div>
         </div>
-        <div id="contactBox" class="contact">
-
+        <div id="contactBox" class="contactContainer">
+            <div id="contactBoxTarget" class="linkTarget"></div>
+            <p>GitHub: Somthing | Discord: Somthing | Instagram: Somthing </p>
         </div>
 
-        <script src="template.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
