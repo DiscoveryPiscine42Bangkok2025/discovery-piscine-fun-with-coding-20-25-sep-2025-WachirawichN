@@ -4,15 +4,14 @@ const loadBox = document.getElementById("loadBox");
 
 let currentBox = 1;
 
-function mouseIn() {
-    jaiBox.querySelector("button").style.backgroundColor = "rgba(119, 181, 27, 1)";
+function mouseIn(event) {
+    event.target.style.backgroundColor = "rgba(139, 205, 41, 1)";
 }
-function mouseOut() {
-    jaiBox.querySelector("button").style.backgroundColor = "rgb(109, 168, 19)";
+function mouseOut(event) {
+    event.target.style.backgroundColor = "rgb(109, 168, 19)";
 }
 
 jaiBox.querySelector("button").addEventListener("click", function() {
-    console.log("Nigga");
     window.location.href = "../wnamgird/wnamgird.html"
 });
 jaiBox.querySelector("button").addEventListener("mouseenter", mouseIn);
@@ -25,7 +24,6 @@ champBox.querySelector("button").addEventListener("mouseenter", mouseIn);
 champBox.querySelector("button").addEventListener("mouseleave", mouseOut);
 
 function loadBarSwitch() {
-    console.log(currentBox);
     if (currentBox == 0) {
         jaiBox.style.opacity = "0%";
         jaiBox.style.zIndex = 0;
