@@ -28,26 +28,29 @@ html, body {
 }
 .navBar h1 {
     position: absolute;
-    left: 7.5%;
+    left: 112.5px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 .navBar a {
     position: absolute;
-    top: 37.5%;
+    top: 42.5%;
+
     color: rgb(152, 152, 152);
-    font-size: 25px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+
+    transition: color 0.25s linear;
 }
 .navBar #profileLink {
-    left: 20%;
+    left: 300px;
 }
 .navBar #experienceLink {
-    left: 30%;
+    left: 400px;
 }
 .navBar #contactLink {
-    left: 44%;
+    left: 545px;
 }
 
 .profileContainer {
@@ -68,7 +71,7 @@ html, body {
 }
 .profileContainer h1, h2, p {
     position: absolute;
-    left: 75px;
+    left: 112.5px;
     width: 40%;
     height: 30%;
 
@@ -77,15 +80,15 @@ html, body {
 }
 .profileContainer .decorateText{
     top: 20%;
-    font-size: 25px;
+    font-size: 32.5px;
 }
 .profileContainer .nameText {
-    top: 25%;
-    font-size: 50px;
+    top: 27.5%;
+    font-size: 55px;
 }
 .profileContainer .otherText{
     top: 40%;
-    font-size: 25px;
+    font-size: 32.5px;
 }
 
 .experienceContainer {
@@ -104,6 +107,74 @@ html, body {
     top: 0%;
     background-color: rgb(35, 35, 35);
 }
+.experienceContainer .projectSelectionBar .decorateBar {
+    position: absolute;
+    width: 100px;
+    height: 7.5%;
+    top: 92.5%;
+    left: 112.5px;
+    background-color: rgb(109, 168, 19);
+}
+.experienceContainer .projectSelectionBar .projectSelectBox {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    top: 0%;
+
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 51, 51, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.experienceContainer .projectSelectionBar #pro1SelBox {
+    left: 112.5px;
+}
+.experienceContainer .projectSelectionBar #pro2SelBox {
+    left: 212.5px;
+}
+.experienceContainer .projectSelectionBar #pro3SelBox {
+    left: 312.5px;
+}
+.experienceContainer .projectSelectionBar #pro4SelBox {
+    left: 412.5px;
+}
+.experienceContainer .projectContentBox {
+    position: absolute;
+    width: 80%;
+    height: 725px;
+    top: 125px;
+    left: 112.5px;
+}
+.experienceContainer .projectContentBox .decorateText {
+    position: absolute;
+    left: 0%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+    top: 0%;
+    font-size: 32.5px;
+}
+.experienceContainer .projectContentBox .nameText {
+    position: absolute;
+    left: 0%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+    top: 5%;
+    font-size: 55px;
+}
+.experienceContainer .projectContentBox .otherText {
+    position: absolute;
+    left: 0%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+    top: 17.5%;
+    font-size: 32.5px;
+}
 
 .contactContainer {
     position: absolute;
@@ -112,13 +183,19 @@ html, body {
     left: 0%;
     top: 1545px;
     background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .contactContainer p {
     position: absolute;
-    top: 10px;
-    left: 7.5%;
+    width: 80%;
+    left: 112.5px;
     color: rgb(152, 152, 152);
-    font-size: 20px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
+
+    margin: 0;
+    padding: 0;
 }
