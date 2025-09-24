@@ -12,7 +12,7 @@ html, body {
     width: 100%;
     height: 80%;
 
-    transition: opacity 0.375s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 .portContainer img {
     position: absolute;
@@ -56,8 +56,6 @@ html, body {
     z-index: 1;
     border: 0px;
     background-color: rgb(109, 168, 19);
-
-    transition: opacity 0.2s ease-in;
 }
 
 .loadContainer {
@@ -85,4 +83,13 @@ html, body {
     height: 100%;
     background-color: rgb(109, 168, 19);
     transition: width 10s linear;
+}
+.loadContainer .hitBox {
+    position: absolute;
+    top: -250%;
+    left: -2.5%;
+    width: 105%;
+    height: 500%;
+    opacity: 0%;
+    z-index: 1;
 }
