@@ -210,11 +210,12 @@ html, body {
 }
 .experienceContainer .projectContentBox .otherText {
     position: absolute;
+    width: 100%;
     left: 0%;
+    top: 17.5%;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
 
-    top: 17.5%;
     font-size: calc(2.5vw + 0.5vh);
 }
 

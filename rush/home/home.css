@@ -31,16 +31,16 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .portContainer .nameText {
-    top: 20%;
-    font-size: 50px;
+    top: 25%;
+    font-size: calc(3vw + 0.5vh);
 }
 .portContainer .decorateText{
-    top: 15%;
-    font-size: 25px;
+    top: 17.5%;
+    font-size: calc(2.0vw + 0.5vh);
 }
 .portContainer .otherText{
     top: 35%;
-    font-size: 25px;
+    font-size: calc(2.0vw + 0.5vh);
 }
 .portContainer button {
     position: absolute;
@@ -49,7 +49,7 @@ html, body {
     width: 12.5%;
     height: 10%;
 
-    font-size: 20px;
+    font-size: calc(1.5vw + 0.5vh);
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 

@@ -109,6 +109,19 @@ function updateImgWidth() {
         img.style.left = ""
         img.style.right = "0%"
     }
+    else
+    {
+        document.getElementById("profileBox").querySelector("h2").style.top = "20%";
+        document.getElementById("profileBox").querySelector("h1").style.top = "27.5%";
+        document.getElementById("profileBox").querySelector("p").style.top = "40%";
+        width = "670px";
+        img.style.width = width;
+        img.style.height = width;
+        img.style.top = "";
+        img.style.bottom = "0%";
+        img.style.left = ""
+        img.style.right = "0%"
+    }
 }
 window.addEventListener("resize", (event) => {
     navBarVisibility(document.documentElement.clientWidth >= 760)
