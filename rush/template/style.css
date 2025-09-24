@@ -121,15 +121,15 @@ html, body {
 }
 .profileContainer .decorateText{
     top: 20%;
-    font-size: 32.5px;
+    font-size: calc(2.5vw + 0.5vh);
 }
 .profileContainer .nameText {
     top: 27.5%;
-    font-size: 55px;
+    font-size: calc(3vw + 0.5vh);
 }
 .profileContainer .otherText{
     top: 40%;
-    font-size: 32.5px;
+    font-size: calc(2.5vw + 0.5vh);
 }
 
 .experienceContainer {
@@ -197,7 +197,7 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 
     top: 0%;
-    font-size: 32.5px;
+    font-size: calc(2.5vw + 0.5vh);
 }
 .experienceContainer .projectContentBox .nameText {
     position: absolute;
@@ -206,7 +206,7 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 
     top: 5%;
-    font-size: 55px;
+    font-size: calc(3vw + 0.5vh);
 }
 .experienceContainer .projectContentBox .otherText {
     position: absolute;
@@ -215,7 +215,7 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 
     top: 17.5%;
-    font-size: 32.5px;
+    font-size: calc(2.5vw + 0.5vh);
 }
 
 .contactContainer {
@@ -235,7 +235,7 @@ html, body {
     width: 80%;
     left: 112.5px;
     color: rgb(152, 152, 152);
-    font-size: 15px;
+    font-size: calc(0.5vw + 0.5vh);
     font-family: Arial, Helvetica, sans-serif;
 
     margin: 0;
